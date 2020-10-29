@@ -1,14 +1,13 @@
 import './App.css';
 import Header from './Header';
+import Home from './Home';
 
 function App() {
   return (
     // BEM naming convention
     <div className="app">
-      {/* Header component */}
       <Header />
-
-      {/* Home component */}
+      <Home />
     </div>
   );
 }
