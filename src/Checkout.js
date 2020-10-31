@@ -3,10 +3,11 @@ import "./Checkout.css";
 import Subtotal from "./Subtotal";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
+import userEvent from "@testing-library/user-event";
 
 function Checkout() {
   let subtotal = 100;
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, user }, dispatch] = useStateValue();
 
   return (
     <div className="checkout">
@@ -17,6 +18,7 @@ function Checkout() {
           className="checkout__ad"
         />
         <div>
+          <h3>Hey, {user.email}</h3>
           <h2 className="checkout__title">Your shopping cart</h2>
           {cart.map((item) => (
             <CheckoutProduct
